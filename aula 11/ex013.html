@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font: normal 20pt arial;
+            background-color: darkslategray;
+            overflow: hidden;
+            color: white;
+            align-items: center;
+            justify-content: center;
+        }
+        h1{
+            font: bold;
+        }
+        input{
+            width: 15vw;
+            height: 12vh;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            outline: none;
+            border: none;
+            border-radius: 8px;
+            font-size: 25px;
+            font: normal arial;
+        }
+        input[type=button]{
+            width: 10vw;
+            height: 15vh;
+            border: none;
+            outline: none;
+        }
+        input[type=button]:hover{
+            width: 15vw;
+            height: 18vh;
+            border-radius: 10px;
+            transform: 1s;
+            transition: 1s;
+            color: white;
+            background-color: black;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+        div{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Em que estado você mora</h1>
+    Você mora em: <input type="text" id="txttv" autocomplete="off">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res"></div>
+</body>
+<script>
+    function verificar() {
+        var regiao = document.getElementById('txttv')
+        var res = document.getElementById('res')
+        var vel = (String(txttv.value)).toLowerCase()
+        res.innerHTML = `Você mora em ${vel}`
+        if (vel == 'paraíba') {
+            res.innerHTML = `Você é paraibano`
+        } else {
+            res.innerHTML = `Você não é paraibano`
+        }
+    }
+</script>
+
+</html>

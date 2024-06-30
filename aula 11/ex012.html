@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: darkslategrey;
+            color: white;
+            font: normal 20pt arial;
+            overflow: hidden;
+            justify-content: center;
+        }
+        input{
+            width: 200px;
+            height: 25px;
+            border: none;
+            border-radius: 2px;
+            outline: none;
+            font: normal arial;
+
+        }
+        input[type=button]{
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            margin-top: 50px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type=button]:hover{
+            transition: 1s;
+            transform: 1.5s;
+            width: 125px;
+            height: 75px;
+            background-color: black;
+            color: white;
+            font-size: 25px;
+            border-radius: 6px;
+            border: none;
+        }
+        div{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Nacionalidade</h1>
+    Sua nacionalidade: <input type="text" id="txtnac" autocomplete="off">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res"></div>
+</body>
+<script>
+    function verificar() {
+        var nacionalidade = document.getElementById('txtnac')
+        var res = document.getElementById('res')
+        var vel = (String(txtnac.value)).toLowerCase()
+        res.innerHTML = `Você mora em ${vel}`
+        if (vel == 'brasil' || vel == 'brasileiro') {
+            res.innerHTML = `Você é brasileiro`
+        } else { res.innerHTML = `Você não é brasileiro` }
+        //'br','Brasil','brasileiro','Brasileiro'
+    }
+</script>
+
+</html>

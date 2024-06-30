@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        @font-face {
+            font-family: "centuryGothic";
+            src: url("../Century\ Gothic.ttf");
+        }
+        body{
+            background-color: #890817;
+            width: 100vw;
+            height: 100vh;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            font: normal 20pt centuryGothic;
+            color: white;
+            align-items: center;
+        
+        }
+        input{
+            width: 30vw;
+            height: 10vh;
+            font-size: 15pt;
+            border: none;
+            outline: none;
+            border-radius: 8px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding-left: 10px;
+        }
+        input[type=button]{
+            border: none;
+            cursor: pointer;
+            width: 25vw;
+            height: 8vh;
+            transition: 2s;
+            text-transform: capitalize;
+        }
+        input[type=button]:hover{
+            transition: 1s;
+            box-shadow: 2px 3px 5px black;
+        }
+        #res{
+            margin-top: 15px;
+            font-style:oblique;
+        }
+       
+    </style>
+</head>
+<body>
+    <header style="position: fixed; top: 0; ;"><h1>SISTEMA DE VOTOS</h1></header>
+    INFORME SUA IDADE: <input type="number" min="0" name="txtidade" id="txtv">
+    <input type="button" value="verificar" onclick="calcular()">
+    <div id="res"></div>
+</body>
+<script>
+    function calcular(){
+        var txtv = document.getElementById("txtv")
+        var res = document.getElementById("res")
+        var idade = Number(txtv.value)
+        res.innerHTML = `sua idade é de ${idade} anos`
+        if(idade <17){
+            res.innerHTML = "<span>Você ainda <strong>não</strong> pode votar.</span>"
+        }else if(idade >= 17 && idade <= 65){
+            res.innerHTML = "<span>Seu voto esse ano é <strong>OBRIGATÓRIO</strong>.</span>"
+        }else{
+            res.innerHTML = "<span>Seu voto é opcional</span>"
+        }
+    }
+</script>
+</html>

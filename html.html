@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        @font-face {
+            font-family: "centuryGothic";
+            src: url("Century\ Gothic.ttf");
+        }
+        body{
+            background-color: royalblue;
+            font: normal 20pt centuryGothic;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+        .main{
+            height: 40px;
+            width: 1px;
+            background-color: darkcyan;
+        }
+        p{
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>CROQUI</h1>
+    <p id="p">0</p>
+    <div class="main"></div>
+</body>
+<script>
+    let div = document.querySelector(".main")
+    div.style.backgroundColor = "darkblue"
+    let p = document.getElementById("p")
+    let pValue = parseInt(p.innerText)
+    let interval = setInterval(function (){
+        pValue++
+        p.innerText = pValue
+        div.style.width = `${pValue}%`
+        if(pValue >= 100){
+            clearInterval(interval)
+        }
+    },50)
+</script>
+</html>

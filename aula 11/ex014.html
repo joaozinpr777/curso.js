@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: #20024F;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+            font: normal 20pt arial;
+            color: white;
+        }
+        input{
+            width: 16vw;
+            height: 12vh;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+        }
+        input[type=button]{
+            margin-top: 25px;
+            font: arial;
+        }
+        input[type=button]:hover{
+            transform: 1s;
+            transition: 1s;
+            color: white;
+            background-color: black;
+            cursor: pointer;
+        }
+        div{
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Votação 2024</h1>
+    <h2>qual sua idade?</h2>
+    <input  min="0" type="number" id="txttv">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res"></div>
+</body>
+<script>
+    function verificar(){
+        var votar = document.getElementById('txttv')
+        var res = document.getElementById('res')
+        var vel = txttv.value
+        res.innerHTML = `sua idade é ${vel}`
+        if(vel >= 17){
+            res.innerHTML = 'Você <strong>vota</strong> esse ano.' 
+        }else{
+            res.innerHTML = 'Você ainda <strong>não vota</strong> esse ano.'
+        }
+    }
+</script>
+</html>

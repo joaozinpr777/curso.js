@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #5A0CB2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            font: normal 20pt arial;
+            color: white;
+            overflow: hidden;
+        }
+        h1{
+            position: absolute;
+            bottom: 90%;
+        }
+        input{
+            width: 200px;
+            height: 60px;
+            outline: none;
+            border: none;
+            font: arial;
+            border-radius: 7px;
+        }
+        input[type=button]{
+            margin-top: 30px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 7px;
+            border: none;
+            outline: none;
+            transition: 2s;
+        }
+        input[type=button]:hover{
+            transform: 1s;
+            transition: 2s;
+            width: 250px;
+            height: 90px;
+            background-color: black;
+            color: white;
+
+        }
+        div{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Jogos Escolares</h1>
+    Sua idade:<input type="number" id="txt" autocomplete="off" min="0">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res"></div>
+</body>
+<script>
+    function verificar() {
+        var idade = document.getElementById('txt')
+        var res = document.getElementById('res')
+        var vel = (String(txt.value)).toLowerCase()
+        res.innerHTML = `Você tem ${vel} anos.`
+        if (vel < 15 || vel > 18) {
+            res.innerHTML = 'Você não pode jogar'
+        } else if (vel <= 18) {
+            res.innerHTML = 'Você pode jogar'
+        }
+    }
+</script>
+
+</html>

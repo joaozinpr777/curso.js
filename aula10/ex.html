@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: darkorchid;
+            font: normal arial;
+        }
+        div{
+            width: 30vw;
+            height: 30vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font: arial;
+            font-size: 25px;
+            transition: 2s;
+        }
+        div:hover{
+            transform: 2s;
+            transition: 2s;
+            width: 50vw;
+            height: 50vh;
+            color: white;
+            font-size: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">OLÁ</div>
+</body>
+<script>
+    var a = document.getElementById('area')
+
+    function clicar(){
+        a.innerText = "Clicou!"
+        a.style.background = 'darkblue'
+    }
+    function entrar(){
+        a.innerText = "Entrou!"
+        a.style.background ='black'
+    }
+    function sair(){
+        a.innerText = "Saiu!"
+        a.style.background = 'transparent'
+    }
+</script>
+</html>

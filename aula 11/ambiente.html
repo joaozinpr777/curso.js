@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: darkslateblue;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font: normal 25pt arial;
+        }
+        input{
+            width: 200px;
+            height: 30px;
+            margin-top: 30px;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+        }
+        input[type=button]{
+            width: 200px;
+            height: 50px;
+            cursor: pointer;
+            border: none;
+            transition: 1s;
+        }
+        input[type=button]:hover{
+            transition: 1s;
+            transform: 1s;
+            width:230px ;
+            height: 60px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistemas de multas</h1>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> km/h
+    <input type="button" value="verificar" onclick="calcular()">
+    <div id="res"></div>
+</body>
+<script>
+    function calcular(){
+        var txtv = document.getElementById("txtvel")
+        var res = document.getElementById("res")
+        var vel = Number(txtv.value)
+        res.innerHTML = `sua velocidade atual é de ${vel} km/h`
+        if(vel>30){
+            res.innerHTML = 'você está multado por excesso de velocidade'
+        }else{
+            res.innerHTML = "diriga sempre com cinto de segurança!"
+        }
+    }
+</script>
+</html>
